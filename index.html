@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Stock Manager</h2>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#">Products</a>
+                <a href="#">Stock In</a>
+                <a href="#">Stock Out</a>
+                <a href="#">Reports</a>
+                <a href="#">Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+
+            <header>
+                <h1>Dashboard</h1>
+                <p>Welcome to your Stock Management System</p>
+            </header>
+
+            <!-- Summary cards -->
+            <section class="cards">
+
+                <div class="card">
+                    <h3>Total Products</h3>
+                    <p id="totalProducts">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Units in Stock</h3>
+                    <p id="totalUnits">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Low Stock</h3>
+                    <p id="lowStock">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Stock Value (KES)</h3>
+                    <p id="stockValue">0</p>
+                </div>
+
+            </section>
+<!-- Add Product Form -->
+<section class="products-section add-product">
+    <h2>Register New Product</h2>
+
+    <form id="addProductForm">
+
+        <label>Product Name</label>
+        <input type="text" id="productName"
+               placeholder="Enter product name" required>
+
+        <label>Product Code</label>
+        <input type="text" id="productCode"
+               placeholder="Example: SUG001" required>
+
+        <label>Quantity</label>
+        <input type="number" id="productQuantity"
+               min="0" step="1" required>
+
+        <label>Unit Price (KES)</label>
+        <input type="number" id="productPrice"
+               min="0" step="0.01" required>
+
+        <label>Minimum Stock Level</label>
+        <input type="number" id="minimumStock"
+               min="0" step="1" required>
+
+        <button type="submit">Save Product</button>
+
+    </form>
+</section>
+            <!-- Products table -->
+            <section class="products-section">
+                <h2>Recent Products</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Code</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="productTable">
+                        <tr>
+                            <td colspan="4">No products registered yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
